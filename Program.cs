@@ -1,4 +1,11 @@
+using AddressBookApi.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddDbContext<AddressBookContext>(options =>
+    options.UseInMemoryDatabase("AddressBookDb"));
 
 
 builder.Services.AddControllers();
